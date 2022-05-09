@@ -3,6 +3,9 @@ pipeline{
    libraries{
        lib('FirstShared1')
    }
+   tools{
+     gradle ('7.4.2')
+     }
    parameters{
       choice(name: 'Module', choices:['All', 'First', 'Second'])
       string(name: 'Branch', defaultValue: 'main')
@@ -13,7 +16,7 @@ pipeline{
         expression { params.Module == 'All' || params.Module == 'First' }
      }
       steps{
-        First("First Baby")
+        sh 'gradle --version'
         }
       }
 
