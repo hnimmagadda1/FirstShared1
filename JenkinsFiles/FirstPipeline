@@ -3,10 +3,7 @@ pipeline{
    libraries{
        lib('FirstShared1')
    }
-   tools {
-           jdk "${java_version}"
-       }
-   stages{
+    stages{
      stage('First'){
       steps{
         echo "hi"
