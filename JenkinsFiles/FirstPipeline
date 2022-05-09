@@ -3,12 +3,28 @@ pipeline{
    libraries{
        lib('FirstShared1')
    }
+   parameters{
+      choice(name: 'Module', choices:['All', 'First', 'Second']
+      string(name: 'Branch',defaultValue: 'main')
+   }
     stages{
      stage('First'){
+     when {
+        expression { params.Module == 'All' || params.Module == 'First' }
+     }
       steps{
-        First("Baby")
+        First("First Baby")
         }
       }
+
+      stage('Second'){
+           when {
+              expression { params.Module == 'All' || params.Module == 'Second' }
+           }
+            steps{
+              First("Second Baby")
+              }
+            }
    }
 
 }
