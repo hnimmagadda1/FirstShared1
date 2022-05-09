@@ -1,0 +1,13 @@
+pipeline{
+   libraries{
+       lib('FirstShared1')
+   }
+   stages{
+     stage{
+      steps{
+        echo "hi"
+        }
+      }
+   }
+
+}
