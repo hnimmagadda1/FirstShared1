@@ -4,7 +4,7 @@ pipeline{
        lib('FirstShared1')
    }
    parameters{
-      choice(name: 'Module', choices:['All', 'First', 'Second']
+      choice(name: 'Module', choices:['All', 'First', 'Second'])
       string(name: 'Branch', defaultValue: 'main')
    }
     stages{
