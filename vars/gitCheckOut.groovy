@@ -3,5 +3,5 @@ def call(final String ScmURL, String BranchName, String DirName) {
               branches         : [[name: "$BranchName"]],
               extensions       : [[$class: 'CloneOption', timeout: 60,]],
               //extensions       : [[$class: 'RelativeTargetDirectory', relativeTargetDir: First + "$DirName" + "${env.JOB_BASE_NAME}"]],
-              userRemoteConfigs: [[credentialsId: none, url: "$ScmURL"]]])
+              userRemoteConfigs: [url: "$ScmURL"]])
 }
