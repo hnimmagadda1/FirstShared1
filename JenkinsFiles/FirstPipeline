@@ -16,7 +16,7 @@ pipeline{
         expression { params.Module == 'All' || params.Module == 'First' }
      }
       steps{
-        Second()
+        sh 'gradle -v'
         }
       }
 
