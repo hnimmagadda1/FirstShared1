@@ -1,5 +1,5 @@
 def call() {
+    sh 'gradle -v'
     checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/arnaud-deprez/demo-jenkins-pipeline-gradle.git']]])
-    sh './gradlew clean build'
-
+    //sh './gradlew clean build'
 }

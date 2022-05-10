@@ -16,8 +16,7 @@ pipeline{
         expression { params.Module == 'All' || params.Module == 'First' }
      }
       steps{
-        sh 'gradle -v'
-        gitcheckout()
+          gitcheckout()
         }
       }
 
